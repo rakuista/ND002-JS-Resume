@@ -6,4 +6,8 @@ This was definitely a solid education in JavaScript. I went through the whole Ja
 * Didn't include Blog in contacts
 
 ### Formatting
-No changes so far but plan do do some once the functional elements are in place.
+* Changed orange to turquoise
+* Changed font to Helvetica Neue to get more widths to play with
+* Increased size of role to bring it up to the x-height in my name
+* Lots of little spacing things to give it a bit more whitespace & center flex items
+* Indented each item under major headings

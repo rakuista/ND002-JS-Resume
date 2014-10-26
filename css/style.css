@@ -1,23 +1,20 @@
-*{
-    padding:0;
-    margin:0;
-    font-family: 'Roboto', sans-serif;
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
 }
-
-
 
 .education-entry, .work-entry, .project-entry {
-  padding-left: 5%;
-  padding-right: 5%;
+  padding: 10px 75px;
 }
 
-
 h1 {
-
   font-size: 40px;
-  color: #F5A623;
+  color: #1E90FF;
   line-height: 48px;
   display: inline;
+  font-weight:normal;
+  margin: 0 15px 0 0;
 }
 
 h2 {
@@ -25,7 +22,7 @@ h2 {
   font-size: 24px;
   color: #999999;
   line-height: 29px;
-  padding: 10px;
+  padding: 30px 0 0 50px;
 }
 
 h3 {
@@ -42,12 +39,12 @@ h4 {
   line-height: 17px;
 }
 
-h2, h3, h4, h5 {
-  padding:10px;
-  padding-left: 5%;
-  padding-right: 5%;
-}
 
+hr {
+  border:1px solid yellow;
+  background-color: green;
+  margin:10px 0;
+}
 
 .date-text {
   font-style: italic;
@@ -69,7 +66,7 @@ h2, h3, h4, h5 {
 p {
   font-size: 14px;
   color: #333333;
-  line-height: 21px;
+  line-height: 1.4;
 }
 
 a {
@@ -87,7 +84,8 @@ a {
 }
 
 #skillsH3 {
-  color: #F5AE23;
+  color: #1E90FF;
+  margin-top:10px;
   display: none;
 }
 
@@ -99,13 +97,14 @@ a {
   background-color: #F5AE23;
 }
 
-.orange-text {
-  color: #F5AE23;
+.blue-label {
+  color: #1E90FF;
+  padding: 0 10px 0 0;
 }
 
 .white-text {
-  font-weight: bold;
-  color: #FFFFFF;
+  font-weight: 300;
+  color: #fff;
 }
 
 .gray {
@@ -123,6 +122,12 @@ a {
   background-color: #484848;
 }
 
+#role {
+  font-size: 29px;
+  font-weight: 300;
+  color: white;
+}
+
 .flex-box {
   display: -webkit-flex;
   display: flex;
@@ -133,7 +138,7 @@ a {
 }
 
 .center-content {
-  padding: 5%;
+  padding: 40px 50px 50px 50px;
 }
 
 ul {
@@ -143,7 +148,7 @@ ul {
 
 .biopic {
   float: left;
-  padding: 10px;
+  padding: 5px 20px 0 0;
   width: 200px;
   display: none;
 }
@@ -165,12 +170,13 @@ img {
   display: inline-block;
 }
 
-span {
-  padding: 5px;
-}
 
 #letsConnect {
   text-align: center;
+}
+
+#topContacts {
+  margin: 0 0 10px 0;
 }
 
 @media only screen and (max-width: 1024px) {

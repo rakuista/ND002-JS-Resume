@@ -2,10 +2,10 @@ var work = {
     "jobs" : [
         {
             "employer" : "Intuit",
-            "title" : "Communications Manager",
+            "title" : "Technical Communications Manager",
             "location" : "Mountain View, CA",
             "dates" : "2013-Present",
-            "description" : "Internal product marketing for platform APIs and services."
+            "description" : "Manage a team of two technical writers, improving documentation processes for internal development teams who are writing their own docs. Responsible for product marketing to internal stakeholders about APIs and services developed by Central Technology Org through multiple channels, including  slide decks, newsletters, templates for Product Management socialization, and internal marketing websites. Coach-in-training for quarterly internal Lean Startup events (3 days/quarter) in our org."
         },
         {
             "employer" : "TheIcebreak",
@@ -54,7 +54,7 @@ var bio = {
     "welcomeMessage" : "Looking for a front end dev with lots of UX experience? Look no further.",
     "contacts" : {
         "mobile" : "408-464-7147",
-        "email" : "rakuista@gmail.com",
+        "email" : "carol.gunby@gmail.com",
         "github": "rakuista",
         "twitter" : "@rakuista",
         "location" : "San Jose, CA"
@@ -120,7 +120,7 @@ bio.display = function() {
     var formattedWelcome = HTMLWelcomeMsg.replace("%data%",bio.welcomeMessage);
     $("#header").prepend(formattedName,formattedRole);
     $("#topContacts").append(formattedMobile,formattedEmail,formattedTwitter,formattedGithub,formattedLocation);
-    $("#header").append(formattedWelcome,formattedPic);
+    $("#header").append(formattedPic,formattedWelcome);
     if (bio.skills.length > 0) {
         $("#header").append(HTMLskillsStart);
         for (skill in bio.skills) {
