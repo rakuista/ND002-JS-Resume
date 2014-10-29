@@ -43,7 +43,7 @@ var projects = {
             "title" : "imgix Documentation",
             "dates" : "2013",
             "description" : "Wrote documentation for signup process and v1 of API.",
-            "images" : ["images/iix-001.png","images/iix-002.png"]
+            "images" : ["images/iix-001.png"]
         }
     ]
 }
@@ -131,39 +131,17 @@ bio.display = function() {
 }
 bio.display();
 
-
-
-
-
-function locationizer(work) {
-    var locations = [];
-    for (var job in work.jobs) {
-        locations.push(work.jobs[job].location);
-    }
-    return locations;
-}
-
-$("#main").append(internationalizeButton);
-function inName(name) {
-    var nameArray = name.split(" ");
-    nameArray[1] = nameArray[1].toUpperCase();
-    nameArray[0] = nameArray[0].slice(0,1).toUpperCase() + nameArray[0].slice(1).toLowerCase();
-
-    finalName = nameArray.join(" ");
-
-    // Don't delete this line!
-    return finalName;
-
-}
-
 projects.display = function() {
     for (proj in projects.projs) {
         $("#projects").append(HTMLprojectStart);
         var formattedTitle = HTMLprojectTitle.replace("%data%",projects.projs[proj].title);
         var formattedDates = HTMLprojectDates.replace("%data%",projects.projs[proj].dates);
         var formattedDescription = HTMLprojectDescription.replace("%data%",projects.projs[proj].description);
-        var formattedImage = HTMLprojectImage.replace("%data%",projects.projs[proj].image);
-        $(".project-entry:last").append(formattedTitle,formattedDates,formattedDescription,formattedImage);
+        $(".project-entry:last").append(formattedTitle,formattedDates,formattedDescription);
+        for (image in projects.projs[proj].images) {
+            var formattedImage = HTMLprojectImage.replace("%data%",projects.projs[proj].images[image]);
+            $(".project-entry:last").append(formattedImage);
+        }
     }
 }
 projects.display();
