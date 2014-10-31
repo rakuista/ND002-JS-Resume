@@ -31,7 +31,7 @@ var HTMLskills = "<li class='flex-item'><span class='white-text'>%data%</span></
 
 var HTMLworkStart = "<div class='work-entry'></div>";
 var HTMLworkEmployer = "<a href='#'>%data%";
-var HTMLworkTitle = " - %data%</a>";
+var HTMLworkTitle = " &mdash; %data%</a>";
 var HTMLworkDates = "<div class='date-text'>%data%</div>";
 var HTMLworkLocation = "<div class='location-text'>%data%</div>";
 var HTMLworkDescription = "<p><br>%data%</p>";
@@ -44,14 +44,14 @@ var HTMLprojectImage = "<img src='%data%'>";
 
 var HTMLschoolStart = "<div class='education-entry'></div>";
 var HTMLschoolName = "<a href='#'>%data%";
-var HTMLschoolDegree = " -- %data%</a>";
+var HTMLschoolDegree = " &mdash; %data%</a>";
 var HTMLschoolDates = "<div class='date-text'>%data%</div>";
 var HTMLschoolLocation = "<div class='location-text'>%data%</div>";
 var HTMLschoolMajor = "<em><br>Major: %data%</em>"
 
 var HTMLonlineClasses = "<h3>Online Classes</h3>";
 var HTMLonlineTitle = "<a href='#'>%data%";
-var HTMLonlineSchool = " - %data%</a>";
+var HTMLonlineSchool = " &mdash; %data%</a>";
 var HTMLonlineDates = "<div class='date-text'>%data%</div>";
 var HTMLonlineURL = "<br><a href='#'>%data%</a>";
 
@@ -87,7 +87,9 @@ function logClicks(x,y) {
 }
 
 $(document).click(function(loc) {
-  // your code goes here!
+    var locX = loc.pageX;
+    var locY = loc.pageY;
+    logClicks(locX,locY);
 });
 
 

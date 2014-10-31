@@ -68,28 +68,37 @@ var education = {
         {
             "name" : "UC Berkeley Extension",
             "location" : "Berkeley, CA",
-            "degree" : "Professional Certificate, Copyediting",
-            "majors" : ["n/a"],
+            "degree" : "Professional Certificate",
+            "majors" : ["Copyediting"],
             "dates" : "2011-2012"
         },
         {
             "name" : "Pacifica Graduate Institute",
             "location" : "Carpinteria, CA",
-            "degree" : "MA, magna cum laude)",
+            "degree" : "MA",
             "majors" : ["Engaged Humanities"],
-            "dates" : "2008–2010"
+            "dates" : "2008-2010"
+        },
+        {
+            "name" : "San Jose State University",
+            "location" : "San Jose, CA",
+            "degree" : "BA",
+            "majors" : ["Creative Arts"],
+            "dates" : "1988-1992"
         }
    ],
     "onlineCourses" : [
         {
-            "onlineCourse" : [
-                {
-                    "title" : "UX Design Immersive",
-                    "school" : "General Assembly",
-                    "dates" : "2013",
-                    "url" : "http://generalassemb.ly"
-                }
-            ]
+            "title" : "Front End Web Development Nanodegree",
+            "school" : "Udacity",
+            "dates" : "2014",
+            "url" : "https://www.udacity.com/course/nd001"
+        },
+        {
+            "title" : "UX Design Immersive",
+            "school" : "General Assembly",
+            "dates" : "2013",
+            "url" : "https://generalassemb.ly/education/user-experience-design-immersive/san-francisco"
         }
     ]
 }
@@ -120,13 +129,11 @@ bio.display = function() {
     var formattedWelcome = HTMLWelcomeMsg.replace("%data%",bio.welcomeMessage);
     $("#header").prepend(formattedName,formattedRole);
     $("#topContacts").append(formattedMobile,formattedEmail,formattedTwitter,formattedGithub,formattedLocation);
-    $("#header").append(formattedPic,formattedWelcome);
-    if (bio.skills.length > 0) {
-        $("#header").append(HTMLskillsStart);
-        for (skill in bio.skills) {
-            var formattedSkill = HTMLskills.replace("%data%",bio.skills[skill]);
-            $("#skills").append(formattedSkill);
-        }
+    $("#footerContacts").append(formattedMobile,formattedEmail,formattedTwitter,formattedGithub,formattedLocation);
+    $("#header").append(formattedPic,formattedWelcome, HTMLskillsStart);
+    for (skill in bio.skills) {
+        var formattedSkill = HTMLskills.replace("%data%",bio.skills[skill]);
+        $("#skills").append(formattedSkill);
     }
 }
 bio.display();
@@ -146,5 +153,29 @@ projects.display = function() {
 }
 projects.display();
 
+education.display = function() {
+    for (school in education.schools) {
+        $("#education").append(HTMLschoolStart);
+        var formattedName = HTMLschoolName.replace("%data%",education.schools[school].name);
+        var formattedLocation = HTMLschoolLocation.replace("%data%",education.schools[school].location);
+        var formattedDegree = HTMLschoolDegree.replace("%data%",education.schools[school].degree);
+        var formattedMajor = HTMLschoolMajor.replace("%data%",education.schools[school].majors);
+        var formattedDates = HTMLschoolDates.replace("%data%",education.schools[school].dates);
+        var formattedSchoolDegree = formattedName + formattedDegree;
+        $(".education-entry:last").append(formattedSchoolDegree,formattedLocation,formattedDates,formattedMajor);
+    }
+    $("#education").append(HTMLonlineClasses);
+    for (course in education.onlineCourses) {
+        $("#education").append(HTMLschoolStart);
+        var formattedTitle = HTMLonlineTitle.replace("%data%",education.onlineCourses[course].title);
+        var formattedSchool = HTMLonlineSchool.replace("%data%",education.onlineCourses[course].school);
+        var formattedSchoolTitle = formattedTitle + formattedSchool
+        var formattedDates = HTMLonlineDates.replace("%data%",education.onlineCourses[course].dates);
+        var formattedURL = HTMLonlineURL.replace("%data%",education.onlineCourses[course].url);
+        $(".education-entry:last").append(formattedSchoolTitle,formattedDates,formattedURL);
+    }
+}
+education.display();
+logClicks();
 
 $("#mapDiv").append(googleMap);
