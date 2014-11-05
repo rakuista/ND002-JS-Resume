@@ -157,6 +157,7 @@ function initializeMap() {
     var lon = placeData.geometry.location.B;  // longitude from the place service
     var name = placeData.formatted_address;   // name of the place from the place service
     var bounds = window.mapBounds;            // current boundaries of the map window
+    var contentString = '<span class="marker-text"> This city is ' + name + '</span>'
 
     // marker is an object with additional data about the pin for a single location
     var marker = new google.maps.Marker({
@@ -169,12 +170,14 @@ function initializeMap() {
     // or hover over a pin on a map. They usually contain more information
     // about a location.
     var infoWindow = new google.maps.InfoWindow({
-      content: name
+      content: contentString,
+      maxWidth: 125
     });
 
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
       // your code goes here!
+      infoWindow.open(map,marker);
     });
 
     // this is where the pin actually gets added to the map.

@@ -130,7 +130,7 @@ bio.display = function() {
     $("#header").prepend(formattedName,formattedRole);
     $("#topContacts").append(formattedMobile,formattedEmail,formattedTwitter,formattedGithub,formattedLocation);
     $("#footerContacts").append(formattedMobile,formattedEmail,formattedTwitter,formattedGithub,formattedLocation);
-    $("#header").append(formattedPic,formattedWelcome, HTMLskillsStart);
+    $("#header").append(formattedPic,formattedWelcome,HTMLskillsStart);
     for (skill in bio.skills) {
         var formattedSkill = HTMLskills.replace("%data%",bio.skills[skill]);
         $("#skills").append(formattedSkill);
